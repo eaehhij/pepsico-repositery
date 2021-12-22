@@ -1,0 +1,98 @@
+/// <reference types='Cypress' />
+
+import "cypress-xpath"
+
+import HomePage from '../pageObjects/HomePage'
+import ViewAllSnacks from '../pageObjects/ViewAllSnacks'
+
+const homePage=new HomePage()
+const viewAllSnacks=new ViewAllSnacks()
+
+describe('Snacks.com Test Suite', function() 
+{   
+    beforeEach(() => {
+        cy.viewport(1920, 1080)
+        cy.clearCookies()
+        cy.clearLocalStorage()
+    })
+
+    beforeEach(function() {
+
+        cy.fixture('example').then(function(data)
+        {
+this.data=data        
+        })
+    })
+       
+it('TC001 - navigate to Snacks.com', function() {
+    cy.reload(true)
+    cy.visit(Cypress.env('url'));
+    cy.wait(1000);    
+})
+
+it('TC002 - confirm redirected to Snacks.com', function() {
+
+    cy.url().should('include', this.data.UrlContent);   
+})
+
+it('TC003 - Navigate PLP page', function() {
+    cy.wait(3000);
+    viewAllSnacks.getplp().click({force: true}); 
+    cy.wait(3000);
+})
+  
+it('TC004 - Verify 1st plp load has 36 product displayed', function() {
+
+    cy.contains(this.data.scrollIntoView).scrollIntoView();
+    viewAllSnacks.getProductContent().should('have.length', 36)
+    cy.wait(3000);
+})
+
+it('TC005 - Verify 2d plp load has 72 product displayed', function() {
+
+    cy.contains(this.data.scrollIntoView).scrollIntoView();
+    viewAllSnacks.getProductContent().should('have.length', 72)
+    cy.wait(3000);
+})
+
+it('TC006 - Verify 3rd plp load has 108 product displayed', function() {
+
+    cy.contains(this.data.scrollIntoView).scrollIntoView();
+    viewAllSnacks.getProductContent().should('have.length', 108)
+    cy.wait(3000);
+})
+  
+it('TC007 - Verify 4th plp load has 144 product displayed', function() {
+
+    cy.contains(this.data.scrollIntoView).scrollIntoView();
+    viewAllSnacks.getProductContent().should('have.length', 144)
+    cy.wait(3000);
+})
+  
+it('TC008 - Verify 5th plp load has 180 product displayed', function() {
+
+    cy.contains(this.data.scrollIntoView).scrollIntoView();
+    viewAllSnacks.getProductContent().should('have.length', 180)
+    cy.wait(3000);
+})
+
+it('TC009 - Identify Notify Me product', function() {
+
+     viewAllSnacks.getProductNotifyMe().eq(0).click({ force: true });
+     cy.wait(3000);    
+})
+ 
+it('TC010 - enter details for Sign Up', function() {
+
+    viewAllSnacks.getNotifyMeEmail().type(this.data.email);
+
+    viewAllSnacks.getNotifyMeEmailOptin().click();
+    viewAllSnacks.getNotifyMePrivacyPolicy().click();
+    viewAllSnacks.getNotifyMeButton().click();
+    cy.wait(3000);
+
+    viewAllSnacks.getNotifyMeThankyouButton().click()
+})
+
+
+})

@@ -1,1 +1,9 @@
-{}
+{
+  "chromeWebSecurity": false,
+  "reporter": "mochawesome",
+  "defaultCommandTimeout": 8000,
+  "env": {
+    "url": "https://ospep-dev.azurefd.net/home"
+  },
+  "projectId": "9g7hvn"
+}

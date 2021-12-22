@@ -1,14 +1,21 @@
 {
   "name": "automation",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "alok",
+  "author": "AlokSharma",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
-    "cypress": "^4.12.1"
+    "cypress": "^4.12.1",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^1.6.2",
+    "mocha": "^9.1.0",
+    "mochawesome": "^6.2.2"
+  },
+  "dependencies": {
+    "remove-suffix": "^2.0.0"
   }
 }

@@ -1,5 +1,27 @@
 {
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
+  "email": "aloksh22@gmail.com",
+  "wrongemail": "aloksh22@gmail.c",
+  "password": "Snacks@2021",
+  "wrongpassword": "wrongpassword",
+  "zipcode": "75024",
+  "userName": "Alok Sharma",
+  "scrollIntoView": "Fritolay.com",
+  "UrlContent": "azurefd.net",
+  "PROMO": "10PCTOFF",
+  "promo": "10pctoff",
+  "first": "Alok",
+  "last": "Sharma",
+  "addrln1": "1519 3RD AVE",
+  "shipcity": "SEATTLE",
+  "shipstate": "Washington",
+  "shipzip": "98101",
+  "signup": "Sign up for the latest news & offers from Snacks.com, PepsiCo, and its brands",
+  "cvv": "123",
+  "month": "10",
+  "year": "2030",
+  "alert": "Our carrier is unable to ship to P.O. boxes, APO, or FPO addresses.",
+  "phone": "8130223003",
+  "BillAdr1": "26237 Enterprise Court"
+  
+
 }
